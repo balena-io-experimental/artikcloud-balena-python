@@ -1,0 +1,68 @@
+{
+  "fields": [
+    {
+      "name": "cpu_load",
+      "type": "CUSTOM",
+      "valueClass": "Double",
+      "isCollection": false,
+      "description": "CPU utilization",
+      "tags": [
+        "system"
+      ],
+      "unitSymbol": "%"
+    },
+    {
+      "name": "free_memory",
+      "type": "CUSTOM",
+      "valueClass": "Integer",
+      "isCollection": false,
+      "description": "Amount of free memory",
+      "tags": [
+        "system"
+      ],
+      "unitSymbol": "byte"
+    },
+    {
+      "name": "random",
+      "type": "CUSTOM",
+      "valueClass": "Double",
+      "isCollection": false,
+      "description": "A random floating point number",
+      "tags": [
+        "testing"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "setText",
+      "description": "Display text",
+      "parameters": [
+        {
+          "name": "text",
+          "valueClass": "String",
+          "children": null,
+          "unit": null,
+          "isCollection": false,
+          "type": "CUSTOM"
+        }
+      ],
+      "isStandard": true,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "setOff",
+      "description": "Turn system off",
+      "parameters": [],
+      "isStandard": true,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "blinkLed",
+      "description": "Blink an LED",
+      "isStandard": false,
+      "type": "CUSTOM"
+    }
+  ],
+  "messageFormat": "json"
+}

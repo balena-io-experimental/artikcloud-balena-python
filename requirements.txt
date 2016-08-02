@@ -1,0 +1,11 @@
+psutil
+requests
+autobahn
+paho-mqtt
+certifi
+
+## ARTIK Cloud
+# Uncomment to use latest released version
+artikcloud
+# Uncomment to use latest development version from GitHub
+#-e git+https://github.com/artikcloud/artikcloud-python.git#egg=artikcloud
