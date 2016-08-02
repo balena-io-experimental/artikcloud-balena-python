@@ -65,10 +65,16 @@ Some example actions:
 * when on "All" device of the given device type has CPU load larger than 90%,
   send an email to a given address that "Device fleet is overloaded"
 * when one particular device in the fleet has a CPU load larger than 10%,
-  send the "setText" action to another device with the text "X% CPU utilization",
+  send the `setText` action to another device with the text "X% CPU utilization",
   where the X is the "cpu_load" reading of the original device
+* when on "Any" device the free memory is below 104857600 (100MB), send the
+  `blinkLed` action (sort of like warning lights)
+* at midnight each day send the `setOff` signal to the entire fleet
 
 ... and a lot more possibilities.
+
+A handy way to test actions, is triggering them manually, by using the corresponding
+"test" button on the Rules dashboard.
 
 ## License
 
