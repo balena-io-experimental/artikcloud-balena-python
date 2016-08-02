@@ -7,6 +7,7 @@ import random
 import time
 
 import psutil
+import requests
 
 """
 Settings
@@ -53,7 +54,8 @@ Handle actions (input)
 def setOff():
     """Turn device off through the Supervisor API
     """
-    pass
+    url = "{}/v1/shutdown?apikey={}".format(os.getenv(RESIN_SUPERVISOR_ADDRESS), os.getenv(RESIN_SUPERVISOR_API_KEY))
+    r = requests.post(url)
 
 def setText(text=""):
     """Print text to the log
@@ -68,4 +70,5 @@ def blinkLed():
     """Blink the device identification LED (when possible) through the
     Supervisor API
     """
-    pass
+    url = "{}/v1/blink?apikey={}".format(os.getenv(RESIN_SUPERVISOR_ADDRESS), os.getenv(RESIN_SUPERVISOR_API_KEY))
+    r = requests.post(url)
