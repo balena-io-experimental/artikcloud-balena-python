@@ -13,6 +13,7 @@ import requests
 ###
 DEVICE_ID = os.getenv('ARTIKCLOUD_DEVICE_ID')
 DEVICE_TOKEN = os.getenv('ARTIKCLOUD_DEVICE_TOKEN')
+TIMEOUT = 60
 try:
     READINGS_PERIOD = int(os.getenv('READINGS_PERIOD', 600))
 except ValueError:

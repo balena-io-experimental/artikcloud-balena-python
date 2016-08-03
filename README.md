@@ -4,7 +4,7 @@ __/!\ Work in progress!__
 
 Implementing a basic [ARTIK Cloud](https://artik.cloud) device with
 resin.io. It exercises sending data and receiving actions using multiple
-connection types (SDK, REST, Websockets, MQTT).
+connection types (Websockets, MQTT at the moment).
 
 The sensor side of the application implements 3 readings to create interesting
 data streams that can be used for testing:
@@ -49,7 +49,7 @@ application are the following:
 
 * `ARTIKCLOUD_DEVICE_ID`: get it from your [ARTIK Cloud devices dashboard](https://artik.cloud/my/devices)
 * `ARTIKCLOUD_DEVICE_TOKEN`: get it from your [ARTIK Cloud devices dashboard](https://artik.cloud/my/devices)
-* `ARTIKCLOUD_CONNECTION`: which implementation to run. Implemented: mqtt (default)
+* `ARTIKCLOUD_CONNECTION`: which implementation to run. Implemented: mqtt (default), websockets
 * `READINGS_PERIOD`: how often to take a reading, in seconds, default=600
 
 ## Setting up actions

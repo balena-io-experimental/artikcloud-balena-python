@@ -1,11 +1,18 @@
 psutil
 requests
-autobahn
+
+## MQTT
 paho-mqtt
 certifi
 
-## ARTIK Cloud
+## Websockets
+autobahn
+twisted
+pyopenssl
+service_identity
+
+## ARTIK Cloud SDK
 # Uncomment to use latest released version
-artikcloud
+# artikcloud
 # Uncomment to use latest development version from GitHub
 #-e git+https://github.com/artikcloud/artikcloud-python.git#egg=artikcloud

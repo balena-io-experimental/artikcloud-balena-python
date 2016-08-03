@@ -1,5 +1,9 @@
 """
 MQTT Client for ARTIk Cloud
+
+For additional details, see:
+* https://developer.artik.cloud/documentation/connect-the-data/mqtt.html
+* https://developer.artik.cloud/documentation/api-reference/mqtt-api.html
 """
 import json
 import time
@@ -63,13 +67,15 @@ def worker(client, stop):
     i = 0
     while not stop.is_set():
         if i % common.READINGS_PERIOD == 0:
-            readings = {
+            # MQTT messages only contain the data, unlike other ARTIK Cloud clientConnectionLost
+            # https://developer.artik.cloud/documentation/connect-the-data/mqtt.html#publish-data-only-messages
+            data = {
                 "cpu_load": common.reading_cpu(),
                 "free_memory": common.reading_memory(),
                 "random": common.reading_random()
             }
-            print(readings)
-            client.publish(PUBLISH_CHANNEL, json.dumps(readings))
+            print(data)
+            client.publish(PUBLISH_CHANNEL, json.dumps(data))
             i = 1
         else:
             i += 1
@@ -99,5 +105,5 @@ if __name__ == "__main__":
     print("Connecting!")
     client.username_pw_set(common.DEVICE_ID, password=common.DEVICE_TOKEN)
     client.tls_set(certifi.where())
-    client.connect(ARTIK_MQTT_URL, ARTIK_MQTT_PORT, keepalive=15)
+    client.connect(ARTIK_MQTT_URL, ARTIK_MQTT_PORT, keepalive=common.TIMEOUT)
     client.loop_forever()
