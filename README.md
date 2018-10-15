@@ -1,9 +1,9 @@
-# ARTIK Cloud Device on resin.io
+# ARTIK Cloud Device on balena
 
 __/!\ Work in progress!__
 
 Implementing a basic [ARTIK Cloud](https://artik.cloud) device with
-resin.io. It exercises sending data and receiving actions using multiple
+balena. It exercises sending data and receiving actions using multiple
 connection types (Websockets, MQTT at the moment).
 
 The sensor side of the application implements 3 readings to create interesting
@@ -32,11 +32,11 @@ A summarized/shortened version of setting up the ARTIK Cloud side of the deploym
 3. Get credentials from devices dashboard
 4. Set up rules to trigger actions on the device (optional)
 
-## Resin setup
+## balena setup
 
-A summarized/shortened version of setting up the resin.io side of the deployment.
+A summarized/shortened version of setting up the balena side of the deployment.
 
-1. Create a new application in the resin.io dashboard.
+1. Create a new application in the balena dashboard.
 2. Deploy a new device
 3. Set up environment variables (see below)
 4. Push code to the application
